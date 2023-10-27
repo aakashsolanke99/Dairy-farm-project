@@ -1,0 +1,72 @@
+<h1 class="contain_of_button"> Get Sales Report</h1>
+<div class="contain_of_button">
+<button (click)="getCow()"> Cow
+    
+</button>
+<button (click)="getBuffalo()"> Buffalo</button></div>
+<div class="contain_of_button" *ngIf="cow || buffalo" >
+    <button (click)="getSalesDataForCow()">Monthly</button>
+    <button (click)="getSalesDataQuarterly()" >yearly</button>
+
+</div>
+
+
+
+  
+<div *ngIf="data" class="container">
+    <h2>Monthly sales</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Month of year</th>
+          <th>No of Data</th>
+          <th>totall quantity of month </th>
+          <th>total bill of month</th>
+          <!-- <th>Milk Type</th>
+          <th>Quantity (liters)</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of salescowdata ">
+          <td>{{ data.monthOfYear }}</td>
+          <td>{{ data.numberOfData }}</td>
+          <td>{{ data.totalBillMonth }}</td>
+          <td>{{ data.totalQuantityMonth }}</td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div *ngIf="quaterlyData" class="container">
+    <h2>quarterly sales</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th> Quarterly year </th>
+          <th>No of Data</th>
+          <th>totall quantity of quarter </th>
+          <th>total bill of quarter</th>
+          <!-- <th>Milk Type</th>
+          <th>Quantity (liters)</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of salesQuaterlyData ">
+          <td>{{ data.monthOfYear }}</td>
+          <td>{{ data.numberOfData }}</td>
+          <td>{{ data.totalBillMonth }}</td>
+          <td>{{ data.totalQuantityMonth }}</td>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  
+  
+  
+  
+   

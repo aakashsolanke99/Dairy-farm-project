@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Information Form</title>
+    <style>
+      body {
+        background-image: url("https://www.heritagefoods.in/blog/wp-content/uploads/2021/03/1.jpg"); /* Replace with your image URL */
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        background-attachment: fixed;
+        opacity: 9;
+      }
+
+      .container {
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0px auto;
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        margin-top: 40px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      textarea,
+      select,
+      input[type="number"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      select {
+        height: 36px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <h1>Customer Information Form</h1> -->
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <label for="costumerName">Customer Name:</label>
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.customerName"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costumerName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="costumerName">Delivered:</label>
+        <input type="text" id="costumerAddress" formControlName="costumerAddress" [(ngModel)]="customer.delivered"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costume rName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="costumerName">Date:</label>
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.checkDate"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costumerName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="costumerName">Customer contact no:</label>
+        <input type="text" id="costumerName" formControlName="costumerName" [(ngModel)]="customer.contactNo"  />
+        <!-- <div
+          *ngIf="
+            customerForm.get('costumerName')?.hasError('required') &&
+            customerForm.get('costumerName')?.touched
+          "
+        >
+          Customer Name is required.
+        </div> -->
+
+        <label for="contactNo">Contact email:</label>
+        <input type="text" id="contactNo" formControlName="contactNo" [(ngModel)]="customer.emailId"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('contactNo')?.hasError('required') &&
+            customerForm.get('contactNo')?.touched
+          "
+        >
+        </div> -->
+        <label for="contactNo">rate:</label>
+        <input type="text" id="contactNo" formControlName="contactNo" [(ngModel)]="customer.rate"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('contactNo')?.hasError('required') &&
+            customerForm.get('contactNo')?.touched
+          "
+        >
+          Contact Number is required.
+        </div> -->
+        <!-- <div
+          *ngIf="
+            customerForm.get('contactNo')?.hasError('pattern') &&
+            customerForm.get('contactNo')?.touched
+          "
+        >
+          Invalid contact number format. Please enter a 10-digit number.
+        </div> -->
+
+        <label for="emailId">id OF Society</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.idOfSociety"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('emailId')?.hasError('email') &&
+            customerForm.get('emailId')?.touched
+          "
+        >
+          Invalid email address format.
+        </div> -->
+        <label for="emailId">Bill:</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.bill"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('emailId')?.hasError('email') &&
+            customerForm.get('emailId')?.touched
+          "
+        >
+          Invalid email address format.
+        </div> -->
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          formControlName="address"
+          rows="4"
+          cols="50"
+          [(ngModel)]="customer.address"
+        ></textarea>
+
+        <label for="milkType">Milk Type:</label>
+        <select id="milkType" formControlName="milkType" [(ngModel)]="customer.milkType">
+          <option value="Regular">Cow</option>
+          <option value="Skimmed">Buffelow</option>
+          <option value="Whole">Mix</option>
+        </select>
+
+        <label for="quantity">Quantity (liters):</label>
+        <input type="text" id="quantity" formControlName="quantity" [(ngModel)]="customer.quantity"/>
+        <!-- <div
+          *ngIf="
+            customerForm.get('quantity')?.hasError('required') &&
+            customerForm.get('quantity')?.touched
+          "
+        >
+          Quantity is required.
+        </div> -->
+
+        <label for="emailId">out standing bill</label>
+        <input type="text" id="emailId" formControlName="emailId" [(ngModel)]="customer.outStandingBill"/>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+         
+        >
+          Submit
+        </button>
+      </form>
+
+      <div *ngIf="success">
+        <p>Form submitted successfully!</p>
+      </div>
+      <div *ngIf="!success && submitted">
+        <p>Form submission failed. Please check the details and try again.</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+/* customer-list.component.css */
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #d7e0e1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style table headers */
+  th {
+    background-color: #4881be;
+    color: #131809;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Style table cells */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #5e4343;
+  }
+  
+  /* Add hover effect on rows */
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  

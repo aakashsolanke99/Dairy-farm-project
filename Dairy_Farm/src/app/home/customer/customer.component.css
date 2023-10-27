@@ -1,0 +1,74 @@
+body {
+  background-image: url("https://www.heritagefoods.in/blog/wp-content/uploads/2021/03/1.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  background-attachment: fixed;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Add a slight transparency to the container */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 50px auto; /* Center the container vertically */
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-top: 20px; /* Slightly reduce the margin for better spacing */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold; /* Make labels bold for better visibility */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select,
+input[type="number"] {
+  width: 100%; /* Adjust input width to 100% for better responsiveness */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select {
+  height: 36px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold; /* Make the button text bold */
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Add styles for error messages */
+div[aria-live="polite"] {
+  color: red;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+/* Style the success message */
+div[aria-live="assertive"] {
+  color: green;
+  font-weight: bold;
+  margin-top: -10px;
+}
