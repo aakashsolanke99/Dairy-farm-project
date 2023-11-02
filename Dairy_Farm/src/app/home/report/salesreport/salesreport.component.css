@@ -33,7 +33,12 @@ table {
     margin: 10px;
     background-color: rgb(100, 117, 180);
   }
+  :
   .contain_of_button{
     display: flex;
     justify-content: center;
+  }
+  button.clicked {
+    background-color: #4caf50; /* Change to the desired color */
+    color: white;
   }

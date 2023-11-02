@@ -1,12 +1,12 @@
 <h1 class="contain_of_button"> Get Sales Report</h1>
 <div class="contain_of_button">
-<button (click)="getCow()"> Cow
+<button (click)="getCow()" [class.clicked]="cow"> Cow
     
 </button>
-<button (click)="getBuffalo()"> Buffalo</button></div>
+<button (click)="getBuffalo()" [class.clicked]="buffalo"> Buffalo</button></div>
 <div class="contain_of_button" *ngIf="cow || buffalo" >
-    <button (click)="getSalesDataForCow()">Monthly</button>
-    <button (click)="getSalesDataQuarterly()" >yearly</button>
+    <button (click)="getSalesDataForCow() " [class.clicked]="monthlyButtonClicked">Monthly</button>
+    <button (click)="getSalesDataQuarterly()" [class.clicked]="quarterlyButtonClicked">yearly</button>
 
 </div>
 

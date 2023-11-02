@@ -6,6 +6,7 @@ export class SalesData{
   no:any;
   total_quantity:any;
   total_bill:any;
+ 
    
 }
 @Component({
@@ -16,16 +17,21 @@ export class SalesData{
 export class SalesreportComponent {
 cow=false
 buffalo=false
+  monthlyButtonClicked: boolean | undefined;
+  quarterlyButtonClicked: boolean | undefined;
 
 constructor(private salesSerice:SalesSericeService){
 
 }
 getCow(){
    this.cow=true
+   this.buffalo=false
    this.milkType="cow"
+   
 }
 getBuffalo(){
   this.buffalo=true;
+  this.cow=false
   this.milkType="buffalo"
 }
 data=false
@@ -45,6 +51,9 @@ milkType:any;
 getSalesDataForCow(){
   this.data=true;
   this.quaterlyData=false
+  this.monthlyButtonClicked = true;
+  this.quarterlyButtonClicked = false;
+
 
   return this.salesSerice.getSalesDataForSale(this.milkType).subscribe((data)=>{
     this.salescowdata=data
@@ -55,6 +64,8 @@ salesQuaterlyData:any;
 getSalesDataQuarterly(){
   this.quaterlyData=true
   this.data=false;
+  this.monthlyButtonClicked = false;
+  this.quarterlyButtonClicked = true;
 
   return this.salesSerice.getSalesDataQuartely(this.milkType).subscribe(data=>{
     this.salesQuaterlyData=data
