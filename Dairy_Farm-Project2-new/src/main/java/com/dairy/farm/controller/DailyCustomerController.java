@@ -81,4 +81,11 @@ public class DailyCustomerController {
     	
     	dailyCustomerService.updateCustomerByDateAndId(id,checkDate, delivered, milkType, quantity);
     }
+    
+    
+    @GetMapping("/historyOfCustomer/{id}")
+    public List<DaliyCustomer> getHistoryOfCustomer(@PathVariable String id) {
+    	int newid=Integer.parseInt(id);
+    	return dailyCustomerService.getHistoryOfCustomer(newid);
+    }
 }

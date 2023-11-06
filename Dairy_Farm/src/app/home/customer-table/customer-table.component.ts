@@ -6,6 +6,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { UpdatecustomerPopupComponent } from '../distribution/updatecustomer-popup/updatecustomer-popup.component';
 import { EditDailyDistributionDetailsComponent } from '../distribution/edit-daily-distribution-details/edit-daily-distribution-details.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 export interface Customer{
   id:any,
   address:any;
@@ -32,7 +33,7 @@ export class CustomerTableComponent  {
 
   customers: any[] = [];
   editForm: FormGroup;
-  constructor(private MatDialog: MatDialog,private fb: FormBuilder,private customerService: CustomerService,private matDialog: MatDialog) {
+  constructor(private router : Router ,private MatDialog: MatDialog,private fb: FormBuilder,private customerService: CustomerService,private matDialog: MatDialog) {
     this.editForm = this.fb.group({
       id: [null, Validators.required],
       milkType: ['', Validators.required],
@@ -141,6 +142,12 @@ addToCustomerList(rowData: any) {
     // });
   }
 
+  getCustomrId(customerId:any){
+    sessionStorage.setItem("customer_id",customerId);
+    this.router.navigate(['/history'])
+
+
+  }
 
   
 

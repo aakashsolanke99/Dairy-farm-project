@@ -86,4 +86,8 @@ export class CustomerService {
     return this.http.put("http://localhost:8081/dailyCustomers/updateData",data)
 
   }
+
+  historyofcustomer(customerId:any){
+    return this.http.get(`http://localhost:8081/dailyCustomers/historyOfCustomer/${customerId}`);
+  }
 }

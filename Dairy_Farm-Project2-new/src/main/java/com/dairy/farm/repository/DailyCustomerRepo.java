@@ -26,5 +26,7 @@ public interface DailyCustomerRepo extends JpaRepository<DaliyCustomer, Integer>
 	@Query(value="select * from daliy_customer where  customer_id=:idodcustomer and check_date=:checkDate", nativeQuery = true)
 	DaliyCustomer findByDateAndId(@Param(value="idodcustomer") int id ,@Param(value="checkDate") LocalDate checkDate);
 	
+	@Query(value="select * from daliy_customer where customer_id=:daliy_customer", nativeQuery = true)
+	List<DaliyCustomer> getHistoryOfCustomer(@Param(value="daliy_customer") int id);
 	
 }

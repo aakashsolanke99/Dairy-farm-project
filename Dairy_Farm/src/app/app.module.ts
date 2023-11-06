@@ -66,6 +66,7 @@ import { UpdateSocietyPopupComponent } from './home/distribution/update-society-
 import { DeleteSocietyPopupComponent } from './home/distribution/delete-society-popup/delete-society-popup.component';
 import { EditDailyDistributionDetailsComponent } from './home/distribution/edit-daily-distribution-details/edit-daily-distribution-details.component';
 import { PowerBiReportComponent } from './home/report/power-bi-report/power-bi-report.component';
+import { HistoryOfCustomerComponent } from './home/history-of-customer/history-of-customer.component';
 
 
 
@@ -107,6 +108,7 @@ import { PowerBiReportComponent } from './home/report/power-bi-report/power-bi-r
     DeleteSocietyPopupComponent,
     EditDailyDistributionDetailsComponent,
     PowerBiReportComponent,
+    HistoryOfCustomerComponent,
     
     
     

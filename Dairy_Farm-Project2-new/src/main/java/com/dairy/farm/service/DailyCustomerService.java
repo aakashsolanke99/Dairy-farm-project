@@ -116,5 +116,9 @@ public class DailyCustomerService {
 //        }
     	dailyCustomerRepository.save(dc);
     }
+    
+    public List<DaliyCustomer> getHistoryOfCustomer(int id) {
+    	return dailyCustomerRepository.getHistoryOfCustomer(id);
+    }
 	
 }

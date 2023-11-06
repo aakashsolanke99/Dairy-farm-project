@@ -17,6 +17,7 @@ import { ReportdashboardComponent } from './home/report/reportdashboard/reportda
 import { CustomerdetailsComponent } from './home/report/customerdetails/customerdetails.component';
 import { SalesreportComponent } from './home/report/salesreport/salesreport.component';
 import { PowerBiReportComponent } from './home/report/power-bi-report/power-bi-report.component';
+import { HistoryOfCustomerComponent } from './home/history-of-customer/history-of-customer.component';
 
 
 const routes: Routes = [
@@ -72,7 +73,9 @@ const routes: Routes = [
   },
 
   { path: 'powerbi-report', component: PowerBiReportComponent }
+,
 
+{ path: 'history', component: HistoryOfCustomerComponent }
   // {
   //   path : 'dashboard', children:[
   //     {
